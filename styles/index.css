@@ -1,0 +1,165 @@
+/* =========================
+   Variables (futuro diseño)
+   ========================= */
+:root {
+  --bg-body: #B5AEAE;
+  --bg-header: #FFCCCC;
+  --bg-about: #F7FFDB;
+  --bg-projects: aqua;
+  --bg-footer: #DBF0FF;
+
+  --text-main: #000;
+  --radius: 8px;
+}
+
+/* =========================
+   Reset básico
+   ========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+}
+
+/* =========================
+   Header
+   ========================= */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--bg-header);
+}
+
+#me-user {
+  width: 120px;
+  border-radius: 50%;
+}
+
+/* =========================
+   Layout principal
+   ========================= */
+.main-content {
+  display: flex;
+  gap: 3rem;
+  padding: 1.5rem;
+}
+
+/* =========================
+   Sobre mí
+   ========================= */
+#about {
+  background-color: var(--bg-about);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+}
+
+#skills {
+  list-style: none;
+  padding: 0;
+}
+
+#skills li {
+  margin-bottom: 0.3rem;
+}
+
+/* =========================
+   Proyectos
+   ========================= */
+#projects {
+  background-color: var(--bg-projects);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   Footer
+   ========================= */
+.site-footer {
+  background-color: var(--bg-footer);
+  padding: 1.5rem;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* =========================
+   Modal
+   ========================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 1.5rem;
+  max-width: 500px;
+  width: 90%;
+  border-radius: var(--radius);
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

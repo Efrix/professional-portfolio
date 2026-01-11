@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portafolio | Efren</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <img src="images/me-user.jpeg" alt="Foto de Efren" id="me-user">
+    <h1>Efrén De Dios Miramontes</h1>
+  </header>
+
+  <main class="main-content">
+
+    <!-- Sobre mí -->
+    <section id="about">
+      <h2>Un poco sobre mí</h2>
+
+      <p>
+        Soy Efren, estudiante de Ingeniería en TICs con enfoque en desarrollo web.
+        Trabajo principalmente con HTML, CSS y JavaScript, creando aplicaciones web sencillas
+        que resuelven problemas concretos.
+      </p>
+
+      <p>
+        Mi objetivo es integrarme a un equipo como desarrollador web junior,
+        seguir aprendiendo y aportar valor desde el primer día.
+      </p>
+
+      <h3>Habilidades</h3>
+      <ul id="skills">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+      </ul>
+    </section>
+
+    <!-- Proyectos -->
+    <aside id="projects">
+      <h2>Proyectos</h2>
+
+      <ul class="projects-grid">
+        <li class="project-card" data-project="aurora">
+          <img src="images/prueba.jpg" alt="Proyecto Aurora">
+        </li>
+
+        <li class="project-card" data-project="landing-page">
+          <img src="images/prueba.jpg" alt="Landing Page">
+        </li>
+
+        <li class="project-card" data-project="crud-php">
+          <img src="images/prueba.jpg" alt="CRUD en PHP">
+        </li>
+
+        <li class="project-card" data-project="js-app">
+          <img src="images/prueba.jpg" alt="Aplicación en JavaScript">
+        </li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer class="site-footer">
+    <h2>Contáctame</h2>
+    <ul>
+      <li>Email: efren-contacto@gmail.com</li>
+      <li>Teléfono: +52 123 456 7890</li>
+      <li>GitHub: efren-contacto</li>
+      <li>LinkedIn: efren-contacto</li>
+    </ul>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+
+      <button class="close-modal" aria-label="Cerrar modal">✕</button>
+
+      <h3 id="modal-title"></h3>
+
+      <section>
+        <h4>Problema que resuelve</h4>
+        <p id="modal-problem"></p>
+      </section>
+
+      <section>
+        <h4>Qué aprendí</h4>
+        <ul id="modal-learning"></ul>
+      </section>
+
+      <section>
+        <h4>Tecnologías</h4>
+        <p id="modal-tech"></p>
+      </section>
+
+      <a id="modal-link" href="#" target="_blank" rel="noopener">
+        Ver repositorio
+      </a>
+
+    </div>
+  </div>
+<script src="scripts/modal.js"></script>
+</body>
+</html>
