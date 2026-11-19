@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mí — Efrix</title>
+    <meta name="description" content="Efrén De Dios Miramontes — estudiante de ingeniería en software, programador backend y artista.">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/about-me.css">
+</head>
+
+<body>
+    <div class="term-bar">
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <span class="prompt">efrix@portfolio</span><span>:</span><span class="path">~</span><span>$</span>
+        <span>cat about-me.md</span><span class="cursor"></span>
+    </div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <h1>Efri<span class="dot-accent">X</span>l25</h1>
+                <p class="tagline">Sobre mí</p>
+            </div>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="../../index.html">inicio</a></li>
+                    <li><a href="projects.html">proyectos</a></li>
+                    <li><a href="contact.html">contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <img class="avatar" src="https://avatars.githubusercontent.com/u/104442770?v=4" alt="Foto de perfil de Efrén" width="140" height="140">
+            <div>
+                <p class="section-label">quién soy</p>
+                <h2 class="section-title">Efrén De Dios Miramontes</h2>
+                <p class="about-intro">
+                    Estudiante de ingeniería, programador y artista. Paso buena parte de la semana
+                    escribiendo backend en Java y Spring Boot, y el resto del tiempo experimentando
+                    con Kotlin, PHP, y proyectos que simplemente quiero ver funcionando.
+                </p>
+            </div>
+        </section>
+
+        <section class="about-block">
+            <p class="section-label">cómo trabajo</p>
+            <h3>Aprendo construyendo</h3>
+            <p>
+                Casi todo lo que sé lo aprendí terminando algo: un CRUD, un juego del ahorcado,
+                una API que tenía que desplegarse en Railway sí o sí. Prefiero entender una
+                herramienta usándola en un proyecto real, aunque sea pequeño, antes que leyendo
+                sobre ella sin aplicarla.
+            </p>
+        </section>
+
+        <section class="skills-section">
+            <p class="section-label">stack</p>
+            <h3>Con lo que trabajo</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Backend</h4>
+                    <ul>
+                        <li>Java + Spring Boot</li>
+                        <li>Hibernate</li>
+                        <li>PostgreSQL</li>
+                        <li>APIs REST</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h4>Apps &amp; web</h4>
+                    <ul>
+                        <li>Kotlin (Android)</li>
+                        <li>PHP</li>
+                        <li>JavaScript</li>
+                        <li>HTML / CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h4>Herramientas</h4>
+                    <ul>
+                        <li>Git &amp; GitHub</li>
+                        <li>Railway</li>
+                        <li>VS Code</li>
+                        <li>Linux</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-block">
+            <p class="section-label">más allá del código</p>
+            <h3>La parte de artista</h3>
+            <p>
+                FenixMusic empezó como un reproductor de música y terminó siendo una excusa para
+                pensar en sonido e interfaz al mismo tiempo. Disfruto los proyectos donde la
+                ingeniería y lo creativo se cruzan, como AURORA, enfocado en salud mental.
+            </p>
+        </section>
+
+        <section class="about-cta">
+            <p>¿Tienes un proyecto en mente o quieres platicar de código?</p>
+            <a href="contact.html" class="btn btn-primary">Escríbeme</a>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <script type="module">
+        import { cargarFooter } from '../components/load-footer.js';
+        cargarFooter('../components/');
+    </script>
+</body>
+
+</html>

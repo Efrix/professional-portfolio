@@ -1,0 +1,110 @@
+/* =========================================================
+   SOBRE MÍ — perfil + stack + nota personal
+   ========================================================= */
+
+.about-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 2.5rem;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.about-intro {
+  color: var(--bone-dim);
+  max-width: 56ch;
+  margin-top: 0.5rem;
+}
+
+.about-block {
+  margin-bottom: 2.5rem;
+  max-width: 64ch;
+}
+
+.about-block h3 {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  color: var(--bone);
+  margin-bottom: 0.75rem;
+}
+
+.about-block p {
+  color: var(--bone-dim);
+}
+
+.skills-section {
+  margin-bottom: 2.5rem;
+}
+
+.skills-section h3 {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  color: var(--bone);
+  margin-bottom: 1.25rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.skill-card {
+  background: var(--wine-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+
+.skill-card h4 {
+  font-family: var(--font-display);
+  color: var(--copper);
+  font-size: var(--step-1);
+  text-transform: lowercase;
+  margin-bottom: 0.75rem;
+}
+
+.skill-card li {
+  color: var(--bone-dim);
+  padding: 0.3rem 0;
+  font-size: var(--step-1);
+}
+
+.about-cta {
+  background: var(--wine-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.about-cta p {
+  color: var(--bone);
+  font-size: var(--step-3);
+  font-family: var(--font-display);
+  max-width: 30ch;
+}
+
+@media (max-width: 700px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

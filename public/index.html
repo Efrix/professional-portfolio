@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efrix — Portafolio</title>
+    <meta name="description" content="Efrén De Dios Miramontes — estudiante de ingeniería, programador y artista. Java, Spring Boot, Kotlin, PHP y proyectos propios.">
+    <link rel="stylesheet" href="src/styles/base.css">
+    <link rel="stylesheet" href="src/styles/index.css">
+</head>
+
+<body>
+    <div class="term-bar">
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <span class="prompt">efrix@portfolio</span><span>:</span><span class="path">~</span><span>$</span>
+        <span>whoami</span><span class="cursor"></span>
+    </div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <h1>Efri<span class="dot-accent">X</span>l25</h1>
+                <p class="tagline">Estudiante de ingeniería, programador y artista</p>
+            </div>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="src/pages/projects.html">proyectos</a></li>
+                    <li><a href="src/pages/about-me.html">sobre mí</a></li>
+                    <li><a href="src/pages/contact.html">contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <p class="section-label">hola, soy efrén</p>
+                <h2 class="hero-title">Construyo software<br>con la misma curiosidad<br>con la que hago música.</h2>
+                <p class="hero-sub">
+                    Java, Spring Boot, Kotlin y PHP de lunes a viernes.
+                    Apps, APIs y experimentos los fines de semana.
+                    Aquí documento lo que voy construyendo.
+                </p>
+                <div class="hero-actions">
+                    <a href="src/pages/projects.html" class="btn btn-primary">Ver proyectos</a>
+                    <a href="https://github.com/Efrix" target="_blank" rel="noopener" class="btn btn-ghost">github/Efrix</a>
+                </div>
+            </div>
+            <div class="hero-card" aria-hidden="true">
+                <div class="hero-card-row"><span>lenguajes</span><span>Java · Kotlin · PHP · JS</span></div>
+                <div class="hero-card-row"><span>repos públicos</span><span>11</span></div>
+                <div class="hero-card-row"><span>último commit</span><span class="status-live">hace 19 min</span></div>
+                <div class="hero-card-row"><span>enfocado en</span><span>backend &amp; apps móviles</span></div>
+            </div>
+        </section>
+
+        <section class="status-strip">
+            <p class="section-label">ahora mismo</p>
+            <div class="status-grid">
+                <a class="status-item" href="https://github.com/Efrix/aurora-go" target="_blank" rel="noopener">
+                    <span class="status-dot"></span>
+                    <span>Trabajando en <strong>aurora-go</strong> — Kotlin</span>
+                </a>
+                <a class="status-item" href="src/pages/projects.html">
+                    <span class="status-dot"></span>
+                    <span>5 proyectos en Java listos para ver</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    <script type="module">
+        import { cargarFooter } from 'src/components/load-footer.js';
+        cargarFooter('src/components/');
+    </script>
+</body>
+
+</html>

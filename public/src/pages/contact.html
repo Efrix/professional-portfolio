@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto — Efrix</title>
+    <meta name="description" content="Contacta a Efrén De Dios Miramontes para colaborar en un proyecto.">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/contact.css">
+</head>
+
+<body>
+    <div class="term-bar">
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <span class="prompt">efrix@portfolio</span><span>:</span><span class="path">~</span><span>$</span>
+        <span>./send-message.sh</span><span class="cursor"></span>
+    </div>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <h1>Efri<span class="dot-accent">X</span>l25</h1>
+                <p class="tagline">Contacto</p>
+            </div>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="../../index.html">inicio</a></li>
+                    <li><a href="projects.html">proyectos</a></li>
+                    <li><a href="about-me.html">sobre mí</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="contact-layout">
+            <section class="contact-intro">
+                <p class="section-label">hablemos</p>
+                <h2 class="section-title">¿Construimos algo?</h2>
+                <p>
+                    Si tienes una idea, un proyecto o simplemente quieres preguntar sobre alguno
+                    de mis repos, escríbeme. Respondo lo antes que pueda.
+                </p>
+
+                <ul class="contact-list">
+                    <li>
+                        <span class="contact-label">email</span>
+                        <a href="mailto:contacto@efrix.dev">contacto@efrix.dev</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">github</span>
+                        <a href="https://github.com/Efrix" target="_blank" rel="noopener">github.com/Efrix</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="contact-form-wrap">
+                <form id="contact-form" novalidate>
+                    <div class="form-row">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required autocomplete="name" placeholder="¿Cómo te llamas?">
+                        <span class="form-error" data-for="name"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Correo</label>
+                        <input type="email" id="email" name="email" required autocomplete="email" placeholder="tu@correo.com">
+                        <span class="form-error" data-for="email"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" required rows="5" placeholder="Cuéntame en qué estás pensando..."></textarea>
+                        <span class="form-error" data-for="message"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    <script type="module">
+        import { cargarFooter } from '../components/load-footer.js';
+        cargarFooter('../components/');
+    </script>
+    <script src="../scripts/contact-form.js"></script>
+</body>
+
+</html>

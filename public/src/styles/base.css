@@ -1,0 +1,319 @@
+/* =========================================================
+   EFRIX — PORTFOLIO DESIGN SYSTEM
+   Concepto: la terminal como interfaz. Cada página es un
+   "comando" ejecutado por el visitante.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* --- Color: paleta nombrada --- */
+  --ink:        #0B0908;   /* fondo principal, casi negro */
+  --wine:       #3D0F0F;   /* vino profundo, superficies elevadas */
+  --wine-soft:  #1C0A0A;   /* vino oscuro para paneles */
+  --copper:     #D97B3F;   /* acento cálido, CTA y enlaces activos */
+  --copper-dim: #8A5430;   /* copper a baja energía, bordes/hover sutil */
+  --bone:       #F0EBE3;   /* texto principal sobre fondo oscuro */
+  --bone-dim:   #B8AFA3;   /* texto secundario */
+  --term-green: #7FB069;   /* estado activo / "online" */
+  --line:       rgba(240, 235, 227, 0.12); /* divisores sutiles */
+
+  /* --- Tipografía --- */
+  --font-display: 'JetBrains Mono', 'Courier New', monospace;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* --- Escala --- */
+  --step-1: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+  --step-2: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  --step-3: clamp(1.3rem, 1.2rem + 0.6vw, 1.6rem);
+  --step-4: clamp(1.9rem, 1.6rem + 1.4vw, 2.6rem);
+  --step-5: clamp(2.6rem, 2rem + 2.8vw, 4.2rem);
+
+  --radius: 6px;
+  --max-width: 1100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-body);
+  font-size: var(--step-2);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--copper);
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul { list-style: none; }
+
+/* =========================================================
+   TERMINAL BAR — firma del sitio, presente en cada página
+   ========================================================= */
+.term-bar {
+  background: var(--wine-soft);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  color: var(--bone-dim);
+  padding: 0.6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.term-bar .dots {
+  display: flex;
+  gap: 6px;
+  margin-right: 0.5rem;
+}
+
+.term-bar .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--copper-dim);
+}
+
+.term-bar .dot:nth-child(2) { background: var(--term-green); opacity: 0.6; }
+.term-bar .dot:nth-child(3) { background: var(--bone-dim); opacity: 0.4; }
+
+.term-bar .prompt {
+  color: var(--term-green);
+}
+
+.term-bar .path {
+  color: var(--copper);
+}
+
+.term-bar .cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: var(--bone);
+  margin-left: 2px;
+  animation: blink 1.1s steps(2) infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* =========================================================
+   HEADER / NAV
+   ========================================================= */
+header.site-header {
+  background: var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding: 1.75rem 2rem 1.5rem;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.brand h1 {
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--bone);
+}
+
+.brand h1 .dot-accent {
+  color: var(--copper);
+}
+
+.brand .tagline {
+  font-family: var(--font-body);
+  color: var(--bone-dim);
+  font-size: var(--step-1);
+  margin-top: 0.35rem;
+}
+
+nav.main-nav ul {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+nav.main-nav a {
+  color: var(--bone-dim);
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 500;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-bottom: 0.3rem;
+  transition: color 0.2s ease;
+}
+
+nav.main-nav a::before {
+  content: '';
+}
+
+nav.main-nav a:hover,
+nav.main-nav a[aria-current="page"] {
+  color: var(--copper);
+}
+
+nav.main-nav a[aria-current="page"]::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--copper);
+}
+
+/* =========================================================
+   LAYOUT GENERAL
+   ========================================================= */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+
+.section-label {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  color: var(--term-green);
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-label::before {
+  content: '//';
+  color: var(--copper-dim);
+}
+
+h2.section-title {
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  color: var(--bone);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer.site-footer {
+  background: var(--wine-soft);
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 2rem;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  color: var(--bone-dim);
+}
+
+.footer-inner a {
+  color: var(--bone-dim);
+  transition: color 0.2s ease;
+}
+
+.footer-inner a:hover {
+  color: var(--copper);
+}
+
+#footer-date {
+  color: var(--bone-dim);
+  opacity: 0.7;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.25rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav.main-nav ul {
+    gap: 1.25rem;
+  }
+  main {
+    padding: 2rem 1.25rem 3rem;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .term-bar {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+  .brand h1 {
+    font-size: var(--step-3);
+  }
+}
